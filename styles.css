@@ -1,1 +1,9 @@
-/*  your css code here. If applicable */
+body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #enterBtn {
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
