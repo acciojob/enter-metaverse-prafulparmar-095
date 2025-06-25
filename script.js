@@ -1,24 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get references to the HTML elements
-    const statusParagraph = document.getElementById('status');
+    // Get references to the elements based on Acceptance Criteria
+    const statusElement = document.getElementById('status'); // This will initially be the <p> tag
     const enterButton = document.getElementById('enterBtn');
 
-    // Add a click event listener to the button
+    // Add an event listener to the button
     enterButton.addEventListener('click', () => {
-        // Create a new h1 element
-        const newH1 = document.createElement('h1');
+        // Change the content and type of the status element
+        const newHeading = document.createElement('h1'); // Create a new <h1> element
+        newHeading.id = 'status'; // Assign the 'status' ID to the new <h1>
+        newHeading.textContent = 'Entered Metaverse'; // Set the text content
 
-        // Set its text content
-        newH1.textContent = "Entered Metaverse";
+        // Replace the old status element with the new one
+        statusElement.parentNode.replaceChild(newHeading, statusElement);
 
-        // Add a class for potential styling (optional)
-        newH1.classList.add('entered-h1');
-
-        // Replace the existing paragraph with the new h1 element
-        // We need to get the parent of the statusParagraph to replace it
-        statusParagraph.parentNode.replaceChild(newH1, statusParagraph);
-
-        // Optional: Hide the button after it's clicked if it's a one-time action
-        enterButton.style.display = 'none';
+        // Optional: Disable the button after clicking, as the action is done
+        enterButton.disabled = true;
+        enterButton.textContent = 'Entered'; // Change button text
+        enterButton.style.backgroundColor = '#6c757d'; // Gray out the button
+        enterButton.style.cursor = 'not-allowed';
     });
 });

@@ -1,74 +1,70 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     background-color: #f0f2f5;
-    color: #333;
-    line-height: 1.6;
+    margin: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px;
+    background-color: #ffffff;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%;
+    max-width: 500px;
 }
 
 h1 {
-    color: #007bff;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Style for the initial paragraph */
+p#status {
+    font-size: 1.2em;
+    color: #555;
     margin-bottom: 25px;
-}
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-#status {
-    font-size: 1.8em; /* Make it prominent */
-    font-weight: bold;
-    color: #28a745; /* Green for initial status */
-    margin: 30px 0;
     padding: 10px;
-    border: 1px solid #28a745;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    display: inline-block; /* To make border fit content */
 }
 
-/* Style for the changed text */
-#status.entered {
-    color: #dc3545; /* Red for entered status, or choose another color */
-    border-color: #dc3545;
+/* Style for the entered state (which will be an h1) */
+h1#status { /* Note: The JS will change the element type, so this selector handles it */
+    font-size: 2.5em; /* Larger size for the entered state */
+    color: #007bff; /* A distinct color for the entered state */
+    margin-bottom: 25px;
+    padding: 10px 0;
+    animation: fadeIn 0.5s ease-out; /* Simple fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 
-button {
+button#enterBtn {
     background-color: #007bff;
     color: white;
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
+button#enterBtn:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
-button:active {
-    background-color: #004085;
+button#enterBtn:active {
     transform: translateY(0);
-}
-
-/* Specific style for the h1 tag if applied directly via JS */
-.entered-h1 {
-    color: #6f42c1; /* Example color for the H1 */
-    font-size: 2.5em;
-    margin-top: 30px;
 }
